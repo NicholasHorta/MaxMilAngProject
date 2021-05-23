@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-md-5">
+        <!-- <app-recipe-list (finalGo)="selectedRec = $event"></app-recipe-list> -->
+        <app-recipe-list (emitToParent)="recipePassFromParent($event)"></app-recipe-list>
+    </div>
+    <div class="col-md-7">
+        <app-recipe-detail 
+            *ngIf="selectedRec; else infoText"
+            [recipe]="selectedRec"
+        ></app-recipe-detail>
+        <ng-template #infoText>
+            please select a recipe
+        </ng-template>
+    </div>
+</div>

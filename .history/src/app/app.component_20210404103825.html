@@ -1,0 +1,9 @@
+<app-header (newPageDecider)="decidePage($event)" ></app-header>
+<div class="container" appDropDown>
+    <div class="row">
+        <div class="col-md-12">
+            <app-recipes *ngIf="pageNum === 0 ? true : false"></app-recipes>
+            <app-shopping-list *ngIf="pageNum === 1 ? true : false"></app-shopping-list>
+        </div>
+    </div>
+</div>
